@@ -1,7 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    views.py                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jszabo <jszabo@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/09/08 16:53:31 by jszabo            #+#    #+#              #
+#    Updated: 2018/09/08 16:55:53 by jszabo           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 from django.shortcuts import render
 
 from rest_framework import generics
-from .serializers import ApiProjectSerializer
+from .serializers import UsersSerializer
 from .models import Users
 
 class CreateView(generics.ListCreateAPIView):
@@ -10,3 +22,8 @@ class CreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save()
+
+class DetailsView(generics.RetrieveUpdateDestroyAPIView):
+
+    queryset = Users.objects.all()
+    serializer_class = UserSerializer
