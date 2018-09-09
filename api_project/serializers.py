@@ -1,9 +1,12 @@
 from rest_framework import serializers
-from .models import Users
+from .models import City
 
-class UsersSerializer(serializers.ModelSerializer):
+class CitySerializer(serializers.ModelSerializer):
+
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
-        model = Users
-        fields = ('uid', 'name')
-        
+        model = City
+        fields = ('name', 'population', 'photo', 'owner',\
+        'date_created', 'date_modified')
+        read_only_fields = ('date_created', 'date_modified')
