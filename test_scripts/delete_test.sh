@@ -9,12 +9,12 @@ echo "Id# to delete:"
 read varid
 echo "Name:"
 echo ${GREEN}'REQUEST:\n'${RESET}'curl --user jszabo \
--X DELETE http://127.0.0.1:8000/Cities/'$varid'/ && \
-curl -X GET http://127.0.0.1:8000/Cities/'$varid'/'
+-X DELETE http://127.0.0.1:8000/Cities/'$varid'/ \
+&& curl -X GET http://127.0.0.1:8000/Cities/'
 echo ${GREEN}'RESPONSE:'${RESET}
-curl --user jszabo \
--X DELETE http://127.0.0.1:8000/Cities/$varid/ && \
-curl -X GET http://127.0.0.1:8000/Cities/$varid/
+curl --user test \
+-X DELETE http://127.0.0.1:8000/Cities/$varid/ \
+&& curl -X GET http://127.0.0.1:8000/Cities/
 echo '\n'
 echo 'Do you want to delete more? (Y/N)'
 read ans

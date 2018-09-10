@@ -18,7 +18,7 @@ echo ${GREEN}'REQUEST:\n'${RESET}'curl --user jszabo \
 -F "photo=@'$varphoto';type=image/jpg" \
 http://127.0.0.1:8000/Newcity/'
 echo ${GREEN}'RESPONSE:'${RESET}
-curl --user jszabo \
+curl --user test \
 -X POST -S \
 -H 'Accept: application/json' \
 -F "name=$varname" -F "population=$varpopulation" \

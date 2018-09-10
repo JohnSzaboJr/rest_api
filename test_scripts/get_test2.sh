@@ -10,7 +10,7 @@ read varid
 echo ${GREEN}'REQUEST:\n'${RESET}'curl -X GET\
 http://127.0.0.1:8000/Cities/'$varid'/\n'
 echo ${GREEN}'RESPONSE:'${RESET}
-curl --user jszabo \
+curl --user test \
 -X GET http://127.0.0.1:8000/Cities/$varid/
 echo '\n'
 echo 'Do you want to get more items? (Y/N)'
