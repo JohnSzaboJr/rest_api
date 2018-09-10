@@ -1,6 +1,6 @@
 from django.db import models
-from django.dispatch import receiver
 from django.db.models.signals import post_delete
+from django.dispatch import receiver
 from django.core.exceptions import ValidationError
 from django.core.validators\
 import MinValueValidator, MaxValueValidator, RegexValidator
@@ -19,6 +19,7 @@ class City(models.Model):
     validate_name = RegexValidator(r'^[A-Z][A-Za-z -]*$', \
     'City names have to be formatted properly (has to start with uppercase,\
     and can only include letters, and hyphens).')
+    # setting accepted format for city names
 
     name = models.CharField(
         max_length=20,

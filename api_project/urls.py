@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from rest_framework.urlpatterns import format_suffix_patterns
 from .views import CreateView, DetailsView, GetView
 
+# sets the routes to different views
 urlpatterns = [
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^Cities/$', GetView.as_view(), name="cities"),
