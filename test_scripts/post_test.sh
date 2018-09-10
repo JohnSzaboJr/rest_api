@@ -16,14 +16,14 @@ echo ${GREEN}'REQUEST:\n'${RESET}'curl --user jszabo \
 -H 'Accept: application/json' \
 -F "name='$varname'" -F "population='$varpopulation'" \
 -F "photo=@'$varphoto';type=image/jpg" \
-http://127.0.0.1:8000/Cities/'
+http://127.0.0.1:8000/Newcity/'
 echo ${GREEN}'RESPONSE:'${RESET}
 curl --user jszabo \
 -X POST -S \
 -H 'Accept: application/json' \
 -F "name=$varname" -F "population=$varpopulation" \
 -F "photo=@$varphoto;type=image/jpg" \
-http://127.0.0.1:8000/Cities/
+http://127.0.0.1:8000/Newcity/
 echo '\n'
 echo 'Do you want to post more? (Y/N)'
 read ans
