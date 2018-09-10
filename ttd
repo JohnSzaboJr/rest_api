@@ -13,9 +13,9 @@ youtube videok
 # #querystring*
 - megirni a teszteket?*
 - before sending, check again if all is compliant*
+- rest API documentations*
+- uploading images from command line*
 
-- rest API documentations
-- uploading images from command line
 - own test scripts
 - debug = false?
 - make sure that you cant add stuff when logged out

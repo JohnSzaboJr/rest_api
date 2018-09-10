@@ -22,13 +22,43 @@ echo '\n'
 
 echo ${YELLOW}'Testing POST method:'${RESET}
 echo ${YELLOW}'-------------------\n'${RESET}
-echo ${GREEN}'REQUEST:\n'${RESET}'curl --user jszabo -d\
-'{"name":"Shanghai", "population":"24115000"}' \
--H "Content-Type: application/json" -X POST \
-http://127.0.0.1:8000/Cities/\n'
+echo ${GREEN}'REQUEST:\n'${RESET}'curl --user jszabo \
+-X POST -S \
+-H 'Accept: application/json' \
+-F "name=Miami" -F "population=5502379" \
+-F "photo=@miami.jpeg;type=image/jpg" \
+http://127.0.0.1:8000/Cities/'
 echo ${GREEN}'RESPONSE:'${RESET}
-curl --user jszabo -d \
-'{"name":"Shanghai", "population":"24115000"}' \
--H "Content-Type: application/json" -X POST \
+curl --user jszabo \
+-X POST -S \
+-H 'Accept: application/json' \
+-F "name=Miami" -F "population=5502379" \
+-F "photo=@miami.jpeg;type=image/jpg" \
 http://127.0.0.1:8000/Cities/
+echo '\n'
+
+echo ${YELLOW}'Testing PUT method:'${RESET}
+echo ${YELLOW}'------------------\n'${RESET}
+echo ${GREEN}'REQUEST:\n'${RESET}'curl --user jszabo \
+-X PUT -S \
+-H 'Accept: application/json' \
+-F "name=New York" -F "population=8,175,133"
+http://127.0.0.1:8000/Cities/11/'
+echo ${GREEN}'RESPONSE:'${RESET}
+curl --user jszabo \
+-X PUT -S \
+-H 'Accept: application/json' \
+-F "name=New York" -F "population=8175133" \
+http://127.0.0.1:8000/Cities/11/
+echo '\n'
+
+echo ${YELLOW}'Testing DELETE method:'${RESET}
+echo ${YELLOW}'----------------------\n'${RESET}
+echo ${GREEN}'REQUEST:\n'${RESET}'curl --user jszabo \
+-X DELETE http://127.0.0.1:8000/Cities/10/ && \
+curl -X GET http://127.0.0.1:8000/Cities/10/'
+echo ${GREEN}'RESPONSE:'${RESET}
+curl --user jszabo \
+-X DELETE http://127.0.0.1:8000/Cities/10/ && \
+curl -X GET http://127.0.0.1:8000/Cities/10/
 echo '\n'
