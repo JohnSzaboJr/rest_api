@@ -1,37 +1,17 @@
-from django.urls import reverse
-from rest_framework.test import APITestCase, APIClient
-from rest_framework.views import status
+from django.test import TestCase
 from .models import City
-from .serializers import CitySerializer
+from django.contrib.auth.models import User
 
-# tests for views
-
-
-class BaseViewTest(APITestCase):
-    client = APIClient()
-
-    @staticmethod
-    def create_city(name="", population=""):
-        if name != "" and population != "":
-            City.objects.create(name=name, population=population)
+class ModelTestCase(TestCase):
 
     def setUp(self):
-        # add test data
-        self.create_city("Shanghai", "24115000")
+        user = User.objects.create(username="nerd")
+        self.city_name = "Test"
+        self.city = City(name=self.city_name, population=1, owner=user)
 
-class GetAllCitiesTest(BaseViewTest):
-
-    def test_get_all_cities(self):
-        """
-        This test ensures that all cities added in the setUp method
-        exist when we make a GET request to the songs/ endpoint
-        """
-        # hit the API endpoint
-        response = self.client.get(
-            reverse("cities-all", kwargs={"version": "v1"})
-        )
-        # fetch the data from db
-        expected = City.objects.all()
-        serialized = CitySerializer(expected, many=True)
-        self.assertEqual(response.data, serialized.data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    def test_model_can_create_a_city(self):
+        # Testing if we can create an item in db
+        old_count = City.objects.count()
+        self.city.save()
+        new_count = City.objects.count()
+        self.assertNotEqual(old_count, new_count)
