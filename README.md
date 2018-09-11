@@ -34,9 +34,13 @@ POST: /Newcity/
 **Example:**
 
 {
+
     name: [string, required, format: starting with uppercase, can only contain letters, space and hyphen]
+    
     population: [integer, required]
+    
     photo: [image file, limit: 150kb]
+    
 }
 
 * **Success Response:**
