@@ -12,7 +12,7 @@ POST: /Newcity/
 
 `GET` | `POST` | `DELETE` | `PUT`
 
-* **URL Params:*
+* **URL-Params:*
 
 **Optional:**
  
