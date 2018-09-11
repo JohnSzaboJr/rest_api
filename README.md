@@ -9,12 +9,10 @@ GET : /Cities/ or /Cities/[id]
 POST: /Newcity/
 
 * **Method:**
-  
-<_The request type_>
 
 `GET` | `POST` | `DELETE` | `PUT`
 
-***URL Params*
+* **URL Params:*
 
 **Optional:**
  
