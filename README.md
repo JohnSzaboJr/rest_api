@@ -10,15 +10,15 @@ POST: /Newcity/
 
 * **Method:**
   
-  <_The request type_>
+<_The request type_>
 
-  `GET` | `POST` | `DELETE` | `PUT`
+`GET` | `POST` | `DELETE` | `PUT`
 
-* **URL Params*
+***URL Params*
 
 **Optional:**
  
-   `id=[integer]`
+`id=[integer]`
 
 * **Data Params**
 
@@ -42,5 +42,5 @@ POST: /Newcity/
 
 curl -X GET http://127.0.0.1:8000/Cities/
 
-curl --user jszabo -d '{"name":"Shanghai", "population":"24115000"}' \
+curl --user test -d '{"name":"Shanghai", "population":"24115000"}' \
 -H "Content-Type: application/json" -X POST http://127.0.0.1:8000/Cities/
