@@ -5,7 +5,8 @@ A database of cities in JSON format.
 
 * **URL**
 
-<_/Cities/_> or <_/Cities/[id]_>
+GET : /Cities/ or /Cities/[id]
+POST: /Newcity/
 
 * **Method:**
   
