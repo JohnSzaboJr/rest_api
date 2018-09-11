@@ -35,9 +35,9 @@ POST: /Newcity/
 
 {
 
-    name: [string, required, format: starting with uppercase, can only contain letters, space and hyphen]
+    name: [string, required, format: starting with uppercase, can only contain letters, space and hyphen],
     
-    population: [integer, required]
+    population: [integer, required],
     
     photo: [image file, limit: 150kb]
     
