@@ -3,16 +3,27 @@ A RESTful API implementation in Django/Python
 
 A database of cities in JSON format.
 
+* **Setup**
+
+pip install django
+
+pip install djangoframework
+
+pip install Pillow
+
+python manage.py runserver
+
 * **URL**
 
 GET : /Cities/ or /Cities/[id]
+
 POST: /Newcity/
 
 * **Method:**
 
 `GET` | `POST` | `DELETE` | `PUT`
 
-* **URL-Params:*
+* **URL Params:**
 
 **Optional:**
  
